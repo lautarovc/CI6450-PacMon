@@ -309,7 +309,7 @@ Prefab:
     - target: {fileID: 114678892170379930, guid: 30d420b7cf5d3ad40b5c02db6d73287a,
         type: 2}
       propertyPath: targetRadius
-      value: 1.3
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 114612825739024298, guid: 30d420b7cf5d3ad40b5c02db6d73287a,
         type: 2}
@@ -658,7 +658,7 @@ MonoBehaviour:
   linearSteering: {x: 0, y: 0, z: 0}
   angularSteering: 0
   verticalSteering: 0
-  jumpAcceleration: 50
+  jumpAcceleration: 45
   movementSize: 0.2
 --- !u!1 &534669902
 GameObject:
@@ -731,7 +731,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 534669902}
   m_LocalRotation: {x: 0.42261827, y: 0, z: 0, w: 0.9063079}
-  m_LocalPosition: {x: 0.12, y: 15, z: -15}
+  m_LocalPosition: {x: 0.12, y: 10.5, z: -12.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1364,7 +1364,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000012843571490, guid: e067a1df356d3e84bb3f15113b018f67, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -3.31
+      value: -7.29
       objectReference: {fileID: 0}
     - target: {fileID: 4000012843571490, guid: e067a1df356d3e84bb3f15113b018f67, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1372,7 +1372,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000012843571490, guid: e067a1df356d3e84bb3f15113b018f67, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 2.09
+      value: -1.77
       objectReference: {fileID: 0}
     - target: {fileID: 4000012843571490, guid: e067a1df356d3e84bb3f15113b018f67, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1428,7 +1428,7 @@ Prefab:
         type: 2}
       propertyPath: target
       value: 
-      objectReference: {fileID: 527059465}
+      objectReference: {fileID: 1133689483}
     - target: {fileID: 114611990678645906, guid: e067a1df356d3e84bb3f15113b018f67,
         type: 2}
       propertyPath: groups.Array.data[0]
@@ -1473,6 +1473,11 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114442837464584922, guid: e067a1df356d3e84bb3f15113b018f67,
+        type: 2}
+      propertyPath: targetRadius
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e067a1df356d3e84bb3f15113b018f67, type: 2}

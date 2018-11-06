@@ -73,7 +73,7 @@ public class Kinematic : SteeringBehavior {
         verticalVelocity += verticalSteering * Time.deltaTime;
 
 
-        if (verticalPosition < 0)
+        if (verticalPosition < ground)
         {
             verticalPosition = ground;
             verticalVelocity = 0;
