@@ -21,7 +21,8 @@ public class Kinematic : SteeringBehavior {
     // Update is called once per frame
     void Update()
     {
-        bool onPlatform = (transform.position.x < -6 && transform.position.z > -1) || (transform.position.z > 6) || (transform.position.z > -6 && transform.position.x > -1 && transform.position.x < 3.5) || (transform.position.x > 6.5 && transform.position.z > -1);
+        bool onPlatform = (transform.position.x < 4 && transform.position.z > 9) || (transform.position.z > 16) || (transform.position.z > 4 && transform.position.x > 9 && transform.position.x < 13.5 && transform.position.z < 13 ) || (transform.position.x > 16.5 && transform.position.z > 9);
+        onPlatform = onPlatform || (transform.position.x > 7 && transform.position.x < 20 && transform.position.z > -3 && transform.position.z < 1) || (transform.position.x > 16.5 && transform.position.x < 20 && transform.position.z > -3 && transform.position.z < 5);
 
         if (onPlatform)
         {

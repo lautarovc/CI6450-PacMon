@@ -69,10 +69,13 @@
     <Compile Include="Assets\Scripts\BlendedSteering.cs" />
     <Compile Include="Assets\Scripts\CollisionAvoidance.cs" />
     <Compile Include="Assets\Scripts\CollisionAvoidance2.cs" />
+    <Compile Include="Assets\Scripts\Edge.cs" />
     <Compile Include="Assets\Scripts\Face.cs" />
+    <Compile Include="Assets\Scripts\Graph.cs" />
     <Compile Include="Assets\Scripts\Jumper.cs" />
     <Compile Include="Assets\Scripts\Kinematic.cs" />
     <Compile Include="Assets\Scripts\LookWhereYoureGoing.cs" />
+    <Compile Include="Assets\Scripts\Node.cs" />
     <Compile Include="Assets\Scripts\Playable.cs" />
     <Compile Include="Assets\Scripts\PrioritySteering.cs" />
     <Compile Include="Assets\Scripts\Pursue.cs" />
@@ -80,6 +83,7 @@
     <Compile Include="Assets\Scripts\Separation.cs" />
     <Compile Include="Assets\Scripts\SteeringBehavior.cs" />
     <Compile Include="Assets\Scripts\ThreeRays.cs" />
+    <Compile Include="Assets\Scripts\Triangulator.cs" />
     <Compile Include="Assets\Scripts\VelocityMatching.cs" />
     <None Include="Assets\MapGenerator\README.txt" />
     <Reference Include="UnityEditor.StandardEvents">

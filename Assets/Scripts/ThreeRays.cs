@@ -39,7 +39,7 @@ public class ThreeRays : MonoBehaviour {
         Vector3 intersection = intersectsRays(target.position);
         if (intersection.magnitude < Vector3.positiveInfinity.magnitude)
         {
-            Debug.Log(intersection.ToString());
+            //Debug.Log(intersection.ToString());
         }
     }
 

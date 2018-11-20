@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - WallPoints
+  - WallMesh
+  - WallMesh1
+  - WallMesh2
+  - FloorMesh
+  - FloorMesh1
+  - FloorMesh2
+  - FloorMesh3
   layers:
   - Default
   - TransparentFX

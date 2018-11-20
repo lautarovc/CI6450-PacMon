@@ -23,28 +23,35 @@ public class Playable : SteeringBehavior {
 	void Update () {
 
         bool moves = false;
+        bool pressed = false;
+        target = transform.position;
 		
         if (Input.GetKey("w"))
         {
-            target = transform.position + new Vector3(0, 0, movementSize);
-            moves = getSteering();
+            target += new Vector3(0, 0, movementSize);
+            pressed = true;
         }
 
         if (Input.GetKey("s"))
         {
-            target = transform.position + new Vector3(0, 0, -movementSize);
-            moves = getSteering();
+            target += new Vector3(0, 0, -movementSize);
+            pressed = true;
         }
 
         if (Input.GetKey("a"))
         {
-            target = transform.position + new Vector3(-movementSize, 0, 0);
-            moves = getSteering();
+            target += new Vector3(-movementSize, 0, 0);
+            pressed = true;
         }
 
         if (Input.GetKey("d"))
         {
-            target = transform.position + new Vector3(movementSize, 0, 0);
+            target += new Vector3(movementSize, 0, 0);
+            pressed = true;
+        }
+
+        if (pressed)
+        {
             moves = getSteering();
         }
 
