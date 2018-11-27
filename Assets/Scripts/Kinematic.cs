@@ -62,6 +62,12 @@ public class Kinematic : SteeringBehavior {
 
 	}
 
+    public void FastMove()
+    {
+        transform.position += velocity * Time.deltaTime;
+
+    }
+
     public void Jump()
     {
         // Position check

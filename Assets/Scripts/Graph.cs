@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEditor;
+using Priority_Queue;
 
 public class Graph : MonoBehaviour {
 
@@ -38,7 +39,7 @@ public class Graph : MonoBehaviour {
                     }
                     else
                     {
-                        peso = nodos[i].altura + 1;
+                        peso = Vector3.Distance(nodos[i].centro, nodos[j].centro);
                     }
 
                     //Edge lado = ScriptableObject.CreateInstance<Edge>();
@@ -111,7 +112,7 @@ public class Graph : MonoBehaviour {
                 nodos.Add(nodeId, newNode);
                 nodeId++;
 
-                Debug.Log(newNode.id.ToString() + ": " + newNode.normal);
+                //Debug.Log(newNode.id.ToString() + ": " + newNode.normal);
             }
         }
 
@@ -181,7 +182,7 @@ public class Graph : MonoBehaviour {
                 nodos.Add(nodeId, newNode);
                 nodeId++;
 
-                Debug.Log(newNode.id.ToString() + ": " + newNode.normal);
+                //Debug.Log(newNode.id.ToString() + ": " + newNode.normal);
             }
         }
 
@@ -229,7 +230,7 @@ public class Graph : MonoBehaviour {
     {
         foreach(Node nodo in nodos.Values)
         {
-            bool dentro = dentroTriangulo(nodo.puntos[0], nodo.puntos[1], nodo.puntos[2], pos);
+            bool dentro = dentroTriangulo(nodo.puntos[0], nodo.puntos[1], nodo.puntos[2], pos, 0.1f);
 
             if (dentro)
             {
@@ -240,6 +241,54 @@ public class Graph : MonoBehaviour {
         return null;
     }
     
+    public List<int> aStar(Vector3 current, Vector3 goal)
+    {
+        FastPriorityQueue<PriorityNode> open = new FastPriorityQueue<PriorityNode>(350);
+        Dictionary<int, bool> visited = new Dictionary<int, bool>();
+        Dictionary<int, int> parents = new Dictionary<int, int>();
+
+        Node actual = posicionEnNodo(current);
+        Node end = posicionEnNodo(goal);
+        float g = 0;
+        float f = g + 0;
+        PriorityNode actualRecord = new PriorityNode(actual.id, g, -1);
+
+        open.Enqueue(actualRecord, f);
+
+        while (open.Count() > 0)
+        {
+            actualRecord = open.Dequeue();
+            actual = nodos[actualRecord.id];
+
+            bool visit;
+            if (visited.TryGetValue(actual.id, out visit)) continue;
+
+            parents.Add(actual.id, actualRecord.parent);
+            visited.Add(actual.id, true);
+
+            if (actual.id == end.id) break;
+
+            foreach (Node sucesor in adyacentes(actual))
+            {
+                g = actualRecord.g + lados[actual.id, sucesor.id];
+                f = g + Vector3.Distance(sucesor.centro, end.centro);
+
+                PriorityNode sucesorRecord = new PriorityNode(sucesor.id, g, actual.id);
+
+                open.Enqueue(sucesorRecord, f);              
+            }
+        }
+
+        if(actual.id != end.id)
+        {
+            Debug.Log("Error: goal not found.");
+            return null;
+        }
+
+        return reconstruccionCamino(actual.id, parents);
+
+    }
+
     // Helper functions
 
     private float areaTriangulo(Vector3 p1, Vector3 p2, Vector3 p3)
@@ -247,7 +296,7 @@ public class Graph : MonoBehaviour {
         return Mathf.Abs((p1.x * (p2.z - p3.z) + p2.x * (p3.z - p1.z) + p3.x * (p1.z - p2.z)) / 2);
     }
 
-    private bool dentroTriangulo(Vector3 a, Vector3 b, Vector3 c, Vector3 pos)
+    private bool dentroTriangulo(Vector3 a, Vector3 b, Vector3 c, Vector3 pos, float epsilon)
     {
         /* Calculate area of triangle ABC */
         float A = areaTriangulo(a, b, c);
@@ -262,7 +311,9 @@ public class Graph : MonoBehaviour {
         float A3 = areaTriangulo(pos, a, b);
 
         /* Check if sum of A1, A2 and A3 is same as A */
-        return (A == A1 + A2 + A3);
+        bool inside = Mathf.Abs(A1 + A2 + A3 - A) <= epsilon;
+
+        return inside;
     }
 
     private int verticesComunes(Vector3[] puntos1, Vector3[] puntos2, float epsilon)
@@ -316,6 +367,20 @@ public class Graph : MonoBehaviour {
         return vertices.Count();
     }
 
+    private List<int> reconstruccionCamino(int nodoActual, Dictionary<int,int> padres)
+    {
+        List<int> camino = new List<int>();
+        camino.Add(nodos[nodoActual].id);
+
+        while (padres[nodoActual] != -1)
+        {
+            nodoActual = padres[nodoActual];
+            camino.Insert(0, nodos[nodoActual].id);
+        }
+
+        return camino;
+    }
+    
     // Debug functions
 
     public void drawAllNodes()
@@ -356,11 +421,26 @@ public class Graph : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        drawAllNodes();
+        //drawAllNodes();
 
         adjacents = adyacentesId(nodos[nodeToDraw]);
 
-        //nodos[nodeToDraw].drawNode();
+        nodos[nodeToDraw].drawNode();
         drawEdges();
+    }
+
+    // Helper Classes
+    public class PriorityNode : FastPriorityQueueNode
+    {
+        public int id;
+        public float g;
+        public int parent;
+
+        public PriorityNode(int nodeId, float distance, int parId)
+        {
+            id = nodeId;
+            g = distance;
+            parent = parId;
+        }
     }
 }

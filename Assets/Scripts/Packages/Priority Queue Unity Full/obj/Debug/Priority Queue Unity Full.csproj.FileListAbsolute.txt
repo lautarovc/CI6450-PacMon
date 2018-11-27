@@ -1,0 +1,8 @@
+C:\Users\Owner\Documents\USB\IA para Videojuegos\Proyecto\CI6450-PacMon\Assets\Scripts\Packages\High-Speed-Priority-Queue\Priority Queue Unity Full\bin\Debug\Priority Queue.dll
+C:\Users\Owner\Documents\USB\IA para Videojuegos\Proyecto\CI6450-PacMon\Assets\Scripts\Packages\High-Speed-Priority-Queue\Priority Queue Unity Full\bin\Debug\Priority Queue.pdb
+C:\Users\Owner\Documents\USB\IA para Videojuegos\Proyecto\CI6450-PacMon\Assets\Scripts\Packages\High-Speed-Priority-Queue\Priority Queue Unity Full\bin\Debug\Priority Queue.dll.CodeAnalysisLog.xml
+C:\Users\Owner\Documents\USB\IA para Videojuegos\Proyecto\CI6450-PacMon\Assets\Scripts\Packages\High-Speed-Priority-Queue\Priority Queue Unity Full\bin\Debug\Priority Queue.dll.lastcodeanalysissucceeded
+C:\Users\Owner\Documents\USB\IA para Videojuegos\Proyecto\CI6450-PacMon\Assets\Scripts\Packages\High-Speed-Priority-Queue\Priority Queue Unity Full\obj\Debug\Priority Queue Unity Full.csprojAssemblyReference.cache
+C:\Users\Owner\Documents\USB\IA para Videojuegos\Proyecto\CI6450-PacMon\Assets\Scripts\Packages\High-Speed-Priority-Queue\Priority Queue Unity Full\obj\Debug\Priority Queue Unity Full.csproj.CoreCompileInputs.cache
+C:\Users\Owner\Documents\USB\IA para Videojuegos\Proyecto\CI6450-PacMon\Assets\Scripts\Packages\High-Speed-Priority-Queue\Priority Queue Unity Full\obj\Debug\Priority Queue.dll
+C:\Users\Owner\Documents\USB\IA para Videojuegos\Proyecto\CI6450-PacMon\Assets\Scripts\Packages\High-Speed-Priority-Queue\Priority Queue Unity Full\obj\Debug\Priority Queue.pdb

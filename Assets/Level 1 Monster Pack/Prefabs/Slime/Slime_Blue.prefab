@@ -174,6 +174,7 @@ GameObject:
   - component: {fileID: 114828812095583058}
   - component: {fileID: 114584792727735170}
   - component: {fileID: 114785636287272516}
+  - component: {fileID: 114224465095502356}
   - component: {fileID: 114791703693889556}
   - component: {fileID: 114352467980989722}
   - component: {fileID: 114759485091007000}
@@ -181,9 +182,13 @@ GameObject:
   - component: {fileID: 114512691299163972}
   - component: {fileID: 114137392016148250}
   - component: {fileID: 114907647672797584}
+  - component: {fileID: 114621446750970652}
+  - component: {fileID: 114954941338864090}
+  - component: {fileID: 114849741953762542}
+  - component: {fileID: 114577123356493050}
   m_Layer: 0
   m_Name: Slime_Blue
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -440,7 +445,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013175867634}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.32, y: 0, z: 0}
+  m_LocalPosition: {x: 6.89, y: 0, z: 8.05}
   m_LocalScale: {x: 90, y: 90, z: 90}
   m_Children:
   - {fileID: 4000011977213630}
@@ -548,17 +553,36 @@ MonoBehaviour:
   weight: 1
   linearSteering: {x: 0, y: 0, z: 0}
   angularSteering: 0
+  verticalSteering: 0
   behaviors:
   - {fileID: 114584792727735170}
   maxAcceleration: 50
   maxRotation: 360
+--- !u!114 &114224465095502356
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013175867634}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d9165fa78a4a714ca057904e6527eee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterKinematic: {fileID: 114828812095583058}
+  weight: 1
+  linearSteering: {x: 0, y: 0, z: 0}
+  angularSteering: 0
+  verticalSteering: 0
+  target: {fileID: 0}
+  maxAcceleration: 10
 --- !u!114 &114352467980989722
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013175867634}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5389adc85c4a4464a99f5314650bc239, type: 3}
   m_Name: 
@@ -567,6 +591,7 @@ MonoBehaviour:
   weight: 1
   linearSteering: {x: 0, y: 0, z: 0}
   angularSteering: 0
+  verticalSteering: 0
   target: {fileID: 0}
   maxAnglarAcceleration: 360
   maxRotation: 360
@@ -588,10 +613,29 @@ MonoBehaviour:
   weight: 1
   linearSteering: {x: 0, y: 0, z: 0}
   angularSteering: 0
+  verticalSteering: 0
   behaviors:
-  - {fileID: 114761269956819642}
+  - {fileID: 114785636287272516}
   maxAcceleration: 50
   maxRotation: 360
+--- !u!114 &114577123356493050
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013175867634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c840e88cf34382940b8963c5dd8a3472, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterKinematic: {fileID: 114828812095583058}
+  weight: 1
+  linearSteering: {x: 0, y: 0, z: 0}
+  angularSteering: 0
+  verticalSteering: 0
+  path: 
+  currentNode: 0
 --- !u!114 &114584792727735170
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -607,12 +651,33 @@ MonoBehaviour:
   weight: 1
   linearSteering: {x: 0, y: 0, z: 0}
   angularSteering: 0
+  verticalSteering: 0
   targets:
   - {fileID: 0}
   - {fileID: 0}
   threshold: 1.4
   decayCoefficient: 0.1
   maxAcceleration: 1
+--- !u!114 &114621446750970652
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013175867634}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23ef94863434baf43862f5ccabf8f265, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterKinematic: {fileID: 114828812095583058}
+  weight: 1
+  linearSteering: {x: 0, y: 0, z: 0}
+  angularSteering: 0
+  verticalSteering: 0
+  target: {fileID: 0}
+  targetKinematic: {fileID: 0}
+  maxAcceleration: 25
+  timeToTarget: 0.1
 --- !u!114 &114759485091007000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -628,6 +693,7 @@ MonoBehaviour:
   weight: 1
   linearSteering: {x: 0, y: 0, z: 0}
   angularSteering: 0
+  verticalSteering: 0
   target: {fileID: 0}
   maxAnglarAcceleration: 360
   maxRotation: 360
@@ -649,6 +715,7 @@ MonoBehaviour:
   weight: 1
   linearSteering: {x: 0, y: 0, z: 0}
   angularSteering: 0
+  verticalSteering: 0
   target: {fileID: 0}
   maxAcceleration: 10
   targetRadius: 1.4
@@ -671,6 +738,7 @@ MonoBehaviour:
   weight: 1
   linearSteering: {x: 0, y: 0, z: 0}
   angularSteering: 0
+  verticalSteering: 0
   target: {fileID: 0}
   maxAcceleration: 50
   targetRadius: 1.4
@@ -682,7 +750,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013175867634}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a06ecc4aac180940b4cb147b3a1b43d, type: 3}
   m_Name: 
@@ -691,6 +759,7 @@ MonoBehaviour:
   weight: 1
   linearSteering: {x: 0, y: 0, z: 0}
   angularSteering: 0
+  verticalSteering: 0
   target: {fileID: 0}
   maxAnglarAcceleration: 360
   maxRotation: 360
@@ -712,16 +781,38 @@ MonoBehaviour:
   weight: 1
   linearSteering: {x: 0, y: 0, z: 0}
   angularSteering: 0
+  verticalSteering: 0
   velocity: {x: 0, y: 0, z: 0}
+  verticalVelocity: 0
   rotation: 0
   maxSpeed: 30
---- !u!114 &114907647672797584
+  jumping: 0
+  gravity: 1
+--- !u!114 &114849741953762542
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013175867634}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2103594829a976844b3f1b03ce52fbd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterKinematic: {fileID: 0}
+  weight: 1
+  linearSteering: {x: 0, y: 0, z: 0}
+  angularSteering: 0
+  verticalSteering: 0
+  target: {fileID: 0}
+  maxSpeed: 20
+--- !u!114 &114907647672797584
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013175867634}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c29f9d2042a53af4d9b651099c3ddaf7, type: 3}
   m_Name: 
@@ -730,10 +821,25 @@ MonoBehaviour:
   weight: 1
   linearSteering: {x: 0, y: 0, z: 0}
   angularSteering: 0
+  verticalSteering: 0
   groups:
   - {fileID: 114137392016148250}
   - {fileID: 114512691299163972}
   epsilon: 0.02
+--- !u!114 &114954941338864090
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013175867634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcb81a78c454d0b4c8b603e9406a3089, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  graph: {fileID: 0}
+  target: {fileID: 0}
+  start: 0
 --- !u!137 &137000012344593156
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

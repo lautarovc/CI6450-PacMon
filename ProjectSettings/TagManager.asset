@@ -12,6 +12,8 @@ TagManager:
   - FloorMesh1
   - FloorMesh2
   - FloorMesh3
+  - Monster
+  - Graph
   layers:
   - Default
   - TransparentFX

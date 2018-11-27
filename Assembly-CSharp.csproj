@@ -10,7 +10,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{00F169CC-1445-2F8B-5F46-C3203F048EF8}</ProjectGuid>
+    <ProjectGuid>{870A2186-0B0A-6320-0B3B-CE79CCFFA58F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -66,16 +66,20 @@
     <Compile Include="Assets\MapGenerator\MapGenScript.cs" />
     <Compile Include="Assets\Scripts\Align.cs" />
     <Compile Include="Assets\Scripts\Arrive.cs" />
+    <Compile Include="Assets\Scripts\AStarTest.cs" />
     <Compile Include="Assets\Scripts\BlendedSteering.cs" />
     <Compile Include="Assets\Scripts\CollisionAvoidance.cs" />
     <Compile Include="Assets\Scripts\CollisionAvoidance2.cs" />
     <Compile Include="Assets\Scripts\Edge.cs" />
     <Compile Include="Assets\Scripts\Face.cs" />
+    <Compile Include="Assets\Scripts\FastSeek.cs" />
     <Compile Include="Assets\Scripts\Graph.cs" />
     <Compile Include="Assets\Scripts\Jumper.cs" />
     <Compile Include="Assets\Scripts\Kinematic.cs" />
     <Compile Include="Assets\Scripts\LookWhereYoureGoing.cs" />
     <Compile Include="Assets\Scripts\Node.cs" />
+    <Compile Include="Assets\Scripts\Packages\Priority Queue Unity Full\Properties\AssemblyInfo.cs" />
+    <Compile Include="Assets\Scripts\PathFollowing.cs" />
     <Compile Include="Assets\Scripts\Playable.cs" />
     <Compile Include="Assets\Scripts\PrioritySteering.cs" />
     <Compile Include="Assets\Scripts\Pursue.cs" />
@@ -86,17 +90,19 @@
     <Compile Include="Assets\Scripts\Triangulator.cs" />
     <Compile Include="Assets\Scripts\VelocityMatching.cs" />
     <None Include="Assets\MapGenerator\README.txt" />
+    <None Include="Assets\Scripts\Packages\Priority Queue Unity Full\bin\Debug\Priority Queue.dll.CodeAnalysisLog.xml" />
+    <None Include="Assets\Scripts\Packages\Priority Queue Unity Full\obj\Debug\Priority Queue Unity Full.csproj.FileListAbsolute.txt" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/Owner/Documents/Jumper Pac-Man/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/Owner/Documents/USB/IA para Videojuegos/Proyecto/CI6450-PacMon/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/Owner/Documents/Jumper Pac-Man/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/Owner/Documents/USB/IA para Videojuegos/Proyecto/CI6450-PacMon/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/Owner/Documents/Jumper Pac-Man/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/Owner/Documents/USB/IA para Videojuegos/Proyecto/CI6450-PacMon/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/Owner/Documents/Jumper Pac-Man/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/Owner/Documents/USB/IA para Videojuegos/Proyecto/CI6450-PacMon/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -301,6 +307,12 @@
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>C:/Users/Owner/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Priority Queue">
+      <HintPath>C:/Users/Owner/Documents/USB/IA para Videojuegos/Proyecto/CI6450-PacMon/Assets/Scripts/Packages/Priority Queue Unity Full/bin/Debug/Priority Queue.dll</HintPath>
+    </Reference>
+    <Reference Include="Priority Queue">
+      <HintPath>C:/Users/Owner/Documents/USB/IA para Videojuegos/Proyecto/CI6450-PacMon/Assets/Scripts/Packages/Priority Queue Unity Full/obj/Debug/Priority Queue.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>
