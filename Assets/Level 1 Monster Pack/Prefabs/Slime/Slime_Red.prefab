@@ -172,12 +172,19 @@ GameObject:
   - component: {fileID: 4000011550217864}
   - component: {fileID: 95000010450722992}
   - component: {fileID: 114228079180401500}
-  - component: {fileID: 114570856005842218}
-  - component: {fileID: 114881960603629658}
-  - component: {fileID: 114161724719655116}
+  - component: {fileID: 114796822603711248}
+  - component: {fileID: 114061605922642470}
+  - component: {fileID: 114913179193246932}
+  - component: {fileID: 114581839412437384}
+  - component: {fileID: 114816486275279354}
+  - component: {fileID: 114389863503641772}
+  - component: {fileID: 114123584553998324}
+  - component: {fileID: 114227230038451584}
+  - component: {fileID: 114541846890406198}
+  - component: {fileID: 114127589642994102}
   m_Layer: 0
   m_Name: Slime_Red
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -334,7 +341,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013297890758}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.65, y: 0, z: -2.56}
+  m_LocalPosition: {x: 5.68, y: 0, z: 6.54}
   m_LocalScale: {x: 90, y: 90, z: 90}
   m_Children:
   - {fileID: 4000011727565174}
@@ -527,7 +534,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114161724719655116
+--- !u!114 &114061605922642470
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -539,14 +546,67 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterKinematic: {fileID: 114228079180401500}
-  target: {fileID: 0}
-  maxAnglarAcceleration: 360
-  maxRotation: 360
-  targetRadius: 1.5
-  slowRadius: 180
-  timeToTarget: 0.01
+  weight: 1
   linearSteering: {x: 0, y: 0, z: 0}
   angularSteering: 0
+  verticalSteering: 0
+--- !u!114 &114123584553998324
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013297890758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c840e88cf34382940b8963c5dd8a3472, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterKinematic: {fileID: 114228079180401500}
+  weight: 1
+  linearSteering: {x: 0, y: 0, z: 0}
+  angularSteering: 0
+  verticalSteering: 0
+  path: 
+  currentNode: 0
+  graphNode: 0
+--- !u!114 &114127589642994102
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013297890758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c29f9d2042a53af4d9b651099c3ddaf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterKinematic: {fileID: 114228079180401500}
+  weight: 1
+  linearSteering: {x: 0, y: 0, z: 0}
+  angularSteering: 0
+  verticalSteering: 0
+  groups:
+  - {fileID: 114541846890406198}
+  epsilon: 0.02
+--- !u!114 &114227230038451584
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013297890758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcb81a78c454d0b4c8b603e9406a3089, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterKinematic: {fileID: 114228079180401500}
+  weight: 1
+  linearSteering: {x: 0, y: 0, z: 0}
+  angularSteering: 0
+  verticalSteering: 0
+  graph: {fileID: 0}
+  target: {fileID: 0}
+  start: 1
 --- !u!114 &114228079180401500
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -558,50 +618,137 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e7f6dc83ca2b1a47b804226909e14f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterKinematic: {fileID: 0}
+  weight: 1
+  linearSteering: {x: 0, y: 0, z: 0}
+  angularSteering: 0
+  verticalSteering: 0
   velocity: {x: 0, y: 0, z: 0}
+  verticalVelocity: 0
   rotation: 0
   maxSpeed: 30
-  linearSteering: {x: 0, y: 0, z: 0}
-  angularSteering: 0
---- !u!114 &114570856005842218
+  jumping: 0
+  gravity: 1
+  walls: 
+--- !u!114 &114389863503641772
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013297890758}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7229945ebcf8424bb02dc52c2224c35, type: 3}
+  m_Script: {fileID: 11500000, guid: 2103594829a976844b3f1b03ce52fbd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   characterKinematic: {fileID: 114228079180401500}
-  targets:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  maxAcceleration: 5
-  radius: 1
+  weight: 1
   linearSteering: {x: 0, y: 0, z: 0}
   angularSteering: 0
---- !u!114 &114881960603629658
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013297890758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69ae4ae2dabd76b4ebf50e4a9aa62545, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterKinematic: {fileID: 114228079180401500}
+  verticalSteering: 0
   target: {fileID: 0}
-  maxAcceleration: 50
-  targetRadius: 1.4
-  slowRadius: 10
-  timeToTarget: 0.1
+  maxSpeed: 5
+--- !u!114 &114541846890406198
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013297890758}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35c6a28e36ce5da4881dc6be08a7f36a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterKinematic: {fileID: 0}
+  weight: 1
   linearSteering: {x: 0, y: 0, z: 0}
   angularSteering: 0
+  verticalSteering: 0
+  behaviors:
+  - {fileID: 114123584553998324}
+  maxAcceleration: 50
+  maxRotation: 360
+--- !u!114 &114581839412437384
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013297890758}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b50234cef21d5949b152c40743dffad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterKinematic: {fileID: 114228079180401500}
+  weight: 1
+  linearSteering: {x: 0, y: 0, z: 0}
+  angularSteering: 0
+  verticalSteering: 0
+  collisionDetector: {fileID: 114796822603711248}
+  targets: []
+  maxForce: {x: 10, y: 0, z: 10}
+--- !u!114 &114796822603711248
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013297890758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c87075a3bca973646be1ef5ffb60beda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRadius: 1.5
+  ray1: {x: 0, y: 0, z: 0}
+  ray2: {x: 0, y: 0, z: 0}
+  ray3: {x: 0, y: 0, z: 0}
+  rayEnd1: {x: 0, y: 0, z: 0}
+  rayEnd2: {x: 0, y: 0, z: 0}
+  rayEnd3: {x: 0, y: 0, z: 0}
+  mainDistance: 2
+  sideDistance: 2
+  sideAngle: 30
+--- !u!114 &114816486275279354
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013297890758}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35c6a28e36ce5da4881dc6be08a7f36a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterKinematic: {fileID: 114228079180401500}
+  weight: 1
+  linearSteering: {x: 0, y: 0, z: 0}
+  angularSteering: 0
+  verticalSteering: 0
+  behaviors:
+  - {fileID: 114913179193246932}
+  - {fileID: 114581839412437384}
+  maxAcceleration: 50
+  maxRotation: 360
+--- !u!114 &114913179193246932
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013297890758}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8c4a4c79748fa34e87b046b987a0c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterKinematic: {fileID: 114228079180401500}
+  weight: 1
+  linearSteering: {x: 0, y: 0, z: 0}
+  angularSteering: 0
+  verticalSteering: 0
+  targets: []
+  threshold: 1.4
+  decayCoefficient: 0.1
+  maxAcceleration: 1
 --- !u!137 &137000012036880476
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

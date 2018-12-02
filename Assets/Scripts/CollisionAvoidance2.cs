@@ -14,16 +14,24 @@ public class CollisionAvoidance2 : SteeringBehavior {
     private Vector3 threatenedRay;
 
     // Max force to apply
-    public Vector3 maxForce = new Vector3(50, 0, 50);
+    public Vector3 maxForce = new Vector3(10, 0, 10);
 
 
     // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    void Awake()
+    {
+        GameObject[] monsters = GameObject.FindGameObjectsWithTag("Monster");
+        foreach (GameObject monster in monsters)
+        {
+            if (!GameObject.ReferenceEquals(monster, gameObject))
+            {
+                targets.Add(monster);
+            }
+        }
+    }
+
+    // Update is called once per frame
+    void Update () {
         bool moves = getSteering();
         if (moves)
         {

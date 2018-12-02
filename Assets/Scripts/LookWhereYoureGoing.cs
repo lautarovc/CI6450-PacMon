@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LookWhereYoureGoing : Align {
+public class LookWhereYoureGoing : SteeringBehavior {
 
 	// Use this for initialization
 	void Start () {
@@ -11,7 +11,7 @@ public class LookWhereYoureGoing : Align {
 	
 	// Update is called once per frame
 	void Update () {
-        bool moves = getTarget();
+        bool moves = getSteering();
         if (moves)
         {
             moveCharacter();
@@ -19,7 +19,7 @@ public class LookWhereYoureGoing : Align {
 
     }
 
-    public bool getTarget()
+    public override bool getSteering()
     {
         float targetRotation;
   

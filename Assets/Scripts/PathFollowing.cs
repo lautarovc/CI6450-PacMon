@@ -2,38 +2,52 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(FastSeek),typeof(Arrive))]
+[RequireComponent(typeof(FastSeek))]
 public class PathFollowing : SteeringBehavior {
 
     private FastSeek seek;
-    private Arrive arrive;
     private Graph graph;
 
     public List<int> path;
     public int currentNode = 0;
+    public int graphNode;
 
 	// Use this for initialization
 	void Start () {
         seek = transform.GetComponent<FastSeek>();
-        arrive = transform.GetComponent<Arrive>();
+
         GameObject graphObj = GameObject.FindGameObjectsWithTag("Graph")[0];
         graph = graphObj.GetComponent<Graph>();
-
         path = new List<int>();
+
+        graphNode = graph.posicionEnNodo(transform.position).id;
+        graph.nodos[graphNode].ocupado = true;
+
     }
 
     // Update is called once per frame
     void Update () {
-        //currentNode = graph.posicionEnNodo(transform.position).id;
-        bool moves = getSteering();
-        if (moves)
+        
+        if (path.Count > 0 && path[currentNode] != graphNode)
         {
-            characterKinematic.FastMove();
+            graph.nodos[graphNode].ocupado = false;
+            graphNode = graph.posicionEnNodo(transform.position).id;
+            graph.nodos[graphNode].ocupado = true;
         }
         else
         {
-            linearStop();
+            graph.nodos[graphNode].ocupado = true;
         }
+
+        //bool moves = getSteering();
+        //if (moves)
+        //{
+        //    characterKinematic.FastMove();
+        //}
+        //else
+        //{
+        //    linearStop();
+        //}
     }
 
     public override bool getSteering()
@@ -45,6 +59,7 @@ public class PathFollowing : SteeringBehavior {
         if (path.Count > 1)
         {   
             int nodeId = path[currentNode+1];
+            if (graph.nodos[nodeId].normal != "ninguna") return moves;
             target = graph.nodos[nodeId].centro;
             isTarget = true;
         }
@@ -52,18 +67,9 @@ public class PathFollowing : SteeringBehavior {
 
         if (isTarget)
         {
-            if (false && currentNode == path.Count-1)
-            {
-                moves = arrive.getSteering(target);
-                linearSteering = arrive.linearSteering;
-                angularSteering = arrive.angularSteering;
-            }
-            else
-            {
-                moves = seek.getSteering(target);
-                linearSteering = seek.linearSteering;
-                angularSteering = seek.angularSteering;
-            }
+            moves = seek.getSteering(target);
+            linearSteering = seek.linearSteering;
+            angularSteering = seek.angularSteering;
         }
 
         return moves;

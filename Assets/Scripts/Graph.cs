@@ -12,7 +12,7 @@ public class Graph : MonoBehaviour {
 
     public int nodeToDraw;
     public List<int> adjacents;
-
+    public string normal;
 
     public void edgesFromNodes()
     {
@@ -241,6 +241,22 @@ public class Graph : MonoBehaviour {
         return null;
     }
     
+    public Node posicionEnNodo(Vector3 pos, List<int> lista)
+    {
+        foreach (int i in lista)
+        {
+            Node nodo = nodos[i];
+            bool dentro = dentroTriangulo(nodo.puntos[0], nodo.puntos[1], nodo.puntos[2], pos, 0.1f);
+
+            if (dentro)
+            {
+                return nodo;
+            }
+        }
+
+        return null;
+    }
+
     public List<int> aStar(Vector3 current, Vector3 goal)
     {
         FastPriorityQueue<PriorityNode> open = new FastPriorityQueue<PriorityNode>(350);
@@ -271,12 +287,19 @@ public class Graph : MonoBehaviour {
             foreach (Node sucesor in adyacentes(actual))
             {
                 g = actualRecord.g + lados[actual.id, sucesor.id];
-                f = g + Vector3.Distance(sucesor.centro, end.centro);
+                f = g + (sucesor.altura+1)*Vector3.Distance(sucesor.centro, end.centro);
+
+                if (sucesor.ocupado) f += 50000;
 
                 PriorityNode sucesorRecord = new PriorityNode(sucesor.id, g, actual.id);
 
                 open.Enqueue(sucesorRecord, f);              
             }
+        }
+
+        if (actual.normal != "ninguna")
+        {
+            return reconstruccionCamino(actual.id, parents);
         }
 
         if(actual.id != end.id)
@@ -407,7 +430,7 @@ public class Graph : MonoBehaviour {
     }
 
     // Use this for initialization
-    void Start () {
+    void Awake () {
         loadWallNodes("WallMesh", new[] {3,4,5,6,7,8,9,11,24,26,27,28,29,30,31,32});
         loadWallNodes("WallMesh1", new[] { 40, 42, 43, 44, 45, 46, 47, 48, 49, 52, 54, 55, 56, 57, 58, 59, 61 });
         loadWallNodes("WallMesh2", new[] { 65, 74, 76, 77, 78, 79, 81, 85, 86, 87, 88, 89, 90, 91, 93, 104, 106, 107 });
@@ -426,6 +449,8 @@ public class Graph : MonoBehaviour {
         adjacents = adyacentesId(nodos[nodeToDraw]);
 
         nodos[nodeToDraw].drawNode();
+        normal = nodos[nodeToDraw].normal;
+
         drawEdges();
     }
 

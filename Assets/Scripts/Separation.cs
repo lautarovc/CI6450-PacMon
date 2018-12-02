@@ -7,18 +7,26 @@ public class Separation : SteeringBehavior {
     // Data for targets
     public List<GameObject> targets;
 
-    public float threshold = 1.6f;
-    public float decayCoefficient = 1f;
+    public float threshold = 1.4f;
+    public float decayCoefficient = 0.1f;
 
-    public float maxAcceleration = 5f;
+    public float maxAcceleration = 1f;
 
     // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    //void Awake()
+    //{
+    //    GameObject[] monsters = GameObject.FindGameObjectsWithTag("Monster");
+    //    foreach (GameObject monster in monsters)
+    //    {
+    //        if (!GameObject.ReferenceEquals(monster, gameObject))
+    //        {
+    //            targets.Add(monster);
+    //        }
+    //    }
+    //}
+
+    // Update is called once per frame
+    void Update () {
         bool moves = getSteering();
         if (moves)
         {

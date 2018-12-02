@@ -6,8 +6,8 @@ using UnityEditor;
 public class ThreeRays : MonoBehaviour {
 
     // Target for testing
-    public Transform target;
-    public float targetRadius = 2f;
+    //public Transform target;
+    public float targetRadius = 1.5f;
 
     // Rays definition
     public Vector3 ray1;
@@ -35,12 +35,6 @@ public class ThreeRays : MonoBehaviour {
         defineRays();
         rotateRays();
         drawRays();
-
-        Vector3 intersection = intersectsRays(target.position);
-        if (intersection.magnitude < Vector3.positiveInfinity.magnitude)
-        {
-            //Debug.Log(intersection.ToString());
-        }
     }
 
     private void defineRays()

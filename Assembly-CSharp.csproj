@@ -66,13 +66,23 @@
     <Compile Include="Assets\MapGenerator\MapGenScript.cs" />
     <Compile Include="Assets\Scripts\Align.cs" />
     <Compile Include="Assets\Scripts\Arrive.cs" />
-    <Compile Include="Assets\Scripts\AStarTest.cs" />
+    <Compile Include="Assets\Scripts\AStar.cs" />
     <Compile Include="Assets\Scripts\BlendedSteering.cs" />
     <Compile Include="Assets\Scripts\CollisionAvoidance.cs" />
     <Compile Include="Assets\Scripts\CollisionAvoidance2.cs" />
     <Compile Include="Assets\Scripts\Edge.cs" />
     <Compile Include="Assets\Scripts\Face.cs" />
     <Compile Include="Assets\Scripts\FastSeek.cs" />
+    <Compile Include="Assets\Scripts\FSM\FSM.cs" />
+    <Compile Include="Assets\Scripts\FSM\InvisiblePursueState.cs" />
+    <Compile Include="Assets\Scripts\FSM\MonsterFSM.cs" />
+    <Compile Include="Assets\Scripts\FSM\PlayerJumpTransition.cs" />
+    <Compile Include="Assets\Scripts\FSM\PlayerNotJumpTransition.cs" />
+    <Compile Include="Assets\Scripts\FSM\PlayerStartTransition.cs" />
+    <Compile Include="Assets\Scripts\FSM\PursueState.cs" />
+    <Compile Include="Assets\Scripts\FSM\StandbyState.cs" />
+    <Compile Include="Assets\Scripts\FSM\State.cs" />
+    <Compile Include="Assets\Scripts\FSM\Transition.cs" />
     <Compile Include="Assets\Scripts\Graph.cs" />
     <Compile Include="Assets\Scripts\Jumper.cs" />
     <Compile Include="Assets\Scripts\Kinematic.cs" />
@@ -302,17 +312,17 @@
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Analytics">
-      <HintPath>C:/Users/Owner/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.StandardEvents">
-      <HintPath>C:/Users/Owner/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
-    </Reference>
     <Reference Include="Priority Queue">
       <HintPath>C:/Users/Owner/Documents/USB/IA para Videojuegos/Proyecto/CI6450-PacMon/Assets/Scripts/Packages/Priority Queue Unity Full/bin/Debug/Priority Queue.dll</HintPath>
     </Reference>
     <Reference Include="Priority Queue">
       <HintPath>C:/Users/Owner/Documents/USB/IA para Videojuegos/Proyecto/CI6450-PacMon/Assets/Scripts/Packages/Priority Queue Unity Full/obj/Debug/Priority Queue.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Analytics">
+      <HintPath>C:/Users/Owner/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.StandardEvents">
+      <HintPath>C:/Users/Owner/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>

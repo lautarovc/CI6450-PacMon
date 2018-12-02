@@ -172,20 +172,18 @@ GameObject:
   - component: {fileID: 4000012535691032}
   - component: {fileID: 95000010992615658}
   - component: {fileID: 114828812095583058}
-  - component: {fileID: 114584792727735170}
-  - component: {fileID: 114785636287272516}
-  - component: {fileID: 114224465095502356}
-  - component: {fileID: 114791703693889556}
-  - component: {fileID: 114352467980989722}
-  - component: {fileID: 114759485091007000}
-  - component: {fileID: 114761269956819642}
-  - component: {fileID: 114512691299163972}
-  - component: {fileID: 114137392016148250}
-  - component: {fileID: 114907647672797584}
-  - component: {fileID: 114621446750970652}
-  - component: {fileID: 114954941338864090}
-  - component: {fileID: 114849741953762542}
-  - component: {fileID: 114577123356493050}
+  - component: {fileID: 114986168678576918}
+  - component: {fileID: 114755041393837892}
+  - component: {fileID: 114548932354465280}
+  - component: {fileID: 114241956077147946}
+  - component: {fileID: 114632434858406938}
+  - component: {fileID: 114779100644016898}
+  - component: {fileID: 114574261609290340}
+  - component: {fileID: 114927098071527616}
+  - component: {fileID: 114954482605858198}
+  - component: {fileID: 114865358993990834}
+  - component: {fileID: 114772742763148388}
+  - component: {fileID: 114717333382871936}
   m_Layer: 0
   m_Name: Slime_Blue
   m_TagString: Monster
@@ -445,7 +443,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013175867634}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.89, y: 0, z: 8.05}
+  m_LocalPosition: {x: 7.04, y: 0, z: 3.11}
   m_LocalScale: {x: 90, y: 90, z: 90}
   m_Children:
   - {fileID: 4000011977213630}
@@ -538,7 +536,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114137392016148250
+--- !u!114 &114241956077147946
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -546,7 +544,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000013175867634}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35c6a28e36ce5da4881dc6be08a7f36a, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b50234cef21d5949b152c40743dffad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   characterKinematic: {fileID: 114828812095583058}
@@ -554,89 +552,10 @@ MonoBehaviour:
   linearSteering: {x: 0, y: 0, z: 0}
   angularSteering: 0
   verticalSteering: 0
-  behaviors:
-  - {fileID: 114584792727735170}
-  maxAcceleration: 50
-  maxRotation: 360
---- !u!114 &114224465095502356
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013175867634}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d9165fa78a4a714ca057904e6527eee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterKinematic: {fileID: 114828812095583058}
-  weight: 1
-  linearSteering: {x: 0, y: 0, z: 0}
-  angularSteering: 0
-  verticalSteering: 0
-  target: {fileID: 0}
-  maxAcceleration: 10
---- !u!114 &114352467980989722
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013175867634}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5389adc85c4a4464a99f5314650bc239, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterKinematic: {fileID: 114828812095583058}
-  weight: 1
-  linearSteering: {x: 0, y: 0, z: 0}
-  angularSteering: 0
-  verticalSteering: 0
-  target: {fileID: 0}
-  maxAnglarAcceleration: 360
-  maxRotation: 360
-  targetRadius: 1.5
-  slowRadius: 180
-  timeToTarget: 0.01
---- !u!114 &114512691299163972
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013175867634}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35c6a28e36ce5da4881dc6be08a7f36a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterKinematic: {fileID: 114828812095583058}
-  weight: 1
-  linearSteering: {x: 0, y: 0, z: 0}
-  angularSteering: 0
-  verticalSteering: 0
-  behaviors:
-  - {fileID: 114785636287272516}
-  maxAcceleration: 50
-  maxRotation: 360
---- !u!114 &114577123356493050
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013175867634}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c840e88cf34382940b8963c5dd8a3472, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterKinematic: {fileID: 114828812095583058}
-  weight: 1
-  linearSteering: {x: 0, y: 0, z: 0}
-  angularSteering: 0
-  verticalSteering: 0
-  path: 
-  currentNode: 0
---- !u!114 &114584792727735170
+  collisionDetector: {fileID: 114986168678576918}
+  targets: []
+  maxForce: {x: 10, y: 0, z: 10}
+--- !u!114 &114548932354465280
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -652,89 +571,22 @@ MonoBehaviour:
   linearSteering: {x: 0, y: 0, z: 0}
   angularSteering: 0
   verticalSteering: 0
-  targets:
-  - {fileID: 0}
-  - {fileID: 0}
+  targets: []
   threshold: 1.4
   decayCoefficient: 0.1
   maxAcceleration: 1
---- !u!114 &114621446750970652
+--- !u!114 &114574261609290340
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013175867634}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23ef94863434baf43862f5ccabf8f265, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterKinematic: {fileID: 114828812095583058}
-  weight: 1
-  linearSteering: {x: 0, y: 0, z: 0}
-  angularSteering: 0
-  verticalSteering: 0
-  target: {fileID: 0}
-  targetKinematic: {fileID: 0}
-  maxAcceleration: 25
-  timeToTarget: 0.1
---- !u!114 &114759485091007000
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013175867634}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f9d7e6188e2813469cccdc8dee102f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterKinematic: {fileID: 114828812095583058}
-  weight: 1
-  linearSteering: {x: 0, y: 0, z: 0}
-  angularSteering: 0
-  verticalSteering: 0
-  target: {fileID: 0}
-  maxAnglarAcceleration: 360
-  maxRotation: 360
-  targetRadius: 1.5
-  slowRadius: 180
-  timeToTarget: 0.01
---- !u!114 &114761269956819642
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013175867634}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 117871bc9f39c094e903d8570fb0e903, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterKinematic: {fileID: 114828812095583058}
-  weight: 1
-  linearSteering: {x: 0, y: 0, z: 0}
-  angularSteering: 0
-  verticalSteering: 0
-  target: {fileID: 0}
-  maxAcceleration: 10
-  targetRadius: 1.4
-  slowRadius: 10
-  timeToTarget: 0.1
-  targetKinematic: {fileID: 0}
-  maxPrediction: 1
---- !u!114 &114785636287272516
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013175867634}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 69ae4ae2dabd76b4ebf50e4a9aa62545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterKinematic: {fileID: 114828812095583058}
+  characterKinematic: {fileID: 0}
   weight: 1
   linearSteering: {x: 0, y: 0, z: 0}
   angularSteering: 0
@@ -744,7 +596,42 @@ MonoBehaviour:
   targetRadius: 1.4
   slowRadius: 10
   timeToTarget: 0.1
---- !u!114 &114791703693889556
+--- !u!114 &114632434858406938
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013175867634}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35c6a28e36ce5da4881dc6be08a7f36a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterKinematic: {fileID: 114828812095583058}
+  weight: 1
+  linearSteering: {x: 0, y: 0, z: 0}
+  angularSteering: 0
+  verticalSteering: 0
+  behaviors:
+  - {fileID: 114548932354465280}
+  - {fileID: 114241956077147946}
+  maxAcceleration: 50
+  maxRotation: 360
+--- !u!114 &114717333382871936
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013175867634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0409893ae15877f42a761a4f3ce9cd47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  states: []
+  initialState: {fileID: 0}
+  currentState: {fileID: 0}
+--- !u!114 &114755041393837892
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -760,12 +647,43 @@ MonoBehaviour:
   linearSteering: {x: 0, y: 0, z: 0}
   angularSteering: 0
   verticalSteering: 0
+--- !u!114 &114772742763148388
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013175867634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c29f9d2042a53af4d9b651099c3ddaf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterKinematic: {fileID: 114828812095583058}
+  weight: 1
+  linearSteering: {x: 0, y: 0, z: 0}
+  angularSteering: 0
+  verticalSteering: 0
+  groups:
+  - {fileID: 114865358993990834}
+  epsilon: 0.02
+--- !u!114 &114779100644016898
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013175867634}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2103594829a976844b3f1b03ce52fbd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterKinematic: {fileID: 114828812095583058}
+  weight: 1
+  linearSteering: {x: 0, y: 0, z: 0}
+  angularSteering: 0
+  verticalSteering: 0
   target: {fileID: 0}
-  maxAnglarAcceleration: 360
-  maxRotation: 360
-  targetRadius: 1.5
-  slowRadius: 180
-  timeToTarget: 0.01
+  maxSpeed: 5
 --- !u!114 &114828812095583058
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -788,25 +706,9 @@ MonoBehaviour:
   maxSpeed: 30
   jumping: 0
   gravity: 1
---- !u!114 &114849741953762542
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013175867634}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2103594829a976844b3f1b03ce52fbd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterKinematic: {fileID: 0}
-  weight: 1
-  linearSteering: {x: 0, y: 0, z: 0}
-  angularSteering: 0
-  verticalSteering: 0
-  target: {fileID: 0}
-  maxSpeed: 20
---- !u!114 &114907647672797584
+  walls: 
+  normal: ninguna
+--- !u!114 &114865358993990834
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -814,7 +716,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000013175867634}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c29f9d2042a53af4d9b651099c3ddaf7, type: 3}
+  m_Script: {fileID: 11500000, guid: 35c6a28e36ce5da4881dc6be08a7f36a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   characterKinematic: {fileID: 114828812095583058}
@@ -822,11 +724,30 @@ MonoBehaviour:
   linearSteering: {x: 0, y: 0, z: 0}
   angularSteering: 0
   verticalSteering: 0
-  groups:
-  - {fileID: 114137392016148250}
-  - {fileID: 114512691299163972}
-  epsilon: 0.02
---- !u!114 &114954941338864090
+  behaviors:
+  - {fileID: 114927098071527616}
+  maxAcceleration: 50
+  maxRotation: 360
+--- !u!114 &114927098071527616
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013175867634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c840e88cf34382940b8963c5dd8a3472, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterKinematic: {fileID: 114828812095583058}
+  weight: 1
+  linearSteering: {x: 0, y: 0, z: 0}
+  angularSteering: 0
+  verticalSteering: 0
+  path: 
+  currentNode: 0
+  graphNode: 0
+--- !u!114 &114954482605858198
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -837,9 +758,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcb81a78c454d0b4c8b603e9406a3089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterKinematic: {fileID: 114828812095583058}
+  weight: 1
+  linearSteering: {x: 0, y: 0, z: 0}
+  angularSteering: 0
+  verticalSteering: 0
   graph: {fileID: 0}
   target: {fileID: 0}
   start: 0
+--- !u!114 &114986168678576918
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013175867634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c87075a3bca973646be1ef5ffb60beda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRadius: 1.5
+  ray1: {x: 0, y: 0, z: 0}
+  ray2: {x: 0, y: 0, z: 0}
+  ray3: {x: 0, y: 0, z: 0}
+  rayEnd1: {x: 0, y: 0, z: 0}
+  rayEnd2: {x: 0, y: 0, z: 0}
+  rayEnd3: {x: 0, y: 0, z: 0}
+  mainDistance: 2
+  sideDistance: 2
+  sideAngle: 30
 --- !u!137 &137000012344593156
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PathFollowing))]
-public class AStarTest : MonoBehaviour {
+public class AStar : SteeringBehavior {
 
     private PathFollowing pathfollow;
 
@@ -30,6 +30,10 @@ public class AStarTest : MonoBehaviour {
 
             pathfollow.path = nodos;
 
+        }
+        else
+        {
+            pathfollow.path = new List<int>();
         }
 	}
 }
