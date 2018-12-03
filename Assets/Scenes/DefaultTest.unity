@@ -9422,7 +9422,7 @@ MonoBehaviour:
   linearSteering: {x: 0, y: 0, z: 0}
   angularSteering: 0
   verticalSteering: 0
-  jumpAcceleration: 35
+  jumpAcceleration: 41
 --- !u!1 &528196107
 GameObject:
   m_ObjectHideFlags: 0

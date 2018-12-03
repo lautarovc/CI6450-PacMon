@@ -451,7 +451,7 @@ public class Graph : MonoBehaviour {
         nodos[nodeToDraw].drawNode();
         normal = nodos[nodeToDraw].normal;
 
-        drawEdges();
+        //drawEdges();
     }
 
     // Helper Classes
