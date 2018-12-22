@@ -182,6 +182,11 @@ GameObject:
   - component: {fileID: 114227230038451584}
   - component: {fileID: 114541846890406198}
   - component: {fileID: 114127589642994102}
+  - component: {fileID: 114675079100592310}
+  - component: {fileID: 114038830717879074}
+  - component: {fileID: 114113746633340894}
+  - component: {fileID: 114677376667319118}
+  - component: {fileID: 114800102791787948}
   m_Layer: 0
   m_Name: Slime_Red
   m_TagString: Monster
@@ -341,7 +346,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013297890758}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.68, y: 0, z: 6.54}
+  m_LocalPosition: {x: 5.12, y: 0, z: 6.12}
   m_LocalScale: {x: 90, y: 90, z: 90}
   m_Children:
   - {fileID: 4000011727565174}
@@ -534,6 +539,26 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114038830717879074
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013297890758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 036a43cca416ce545812969c0256e353, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  targetRadius: 1.5
+  vertices:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  vertexDistance: 5
+  vertexAngle: 30
+  detected: 0
 --- !u!114 &114061605922642470
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -550,6 +575,23 @@ MonoBehaviour:
   linearSteering: {x: 0, y: 0, z: 0}
   angularSteering: 0
   verticalSteering: 0
+--- !u!114 &114113746633340894
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013297890758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24f573bf31df4354b98b33fc45382ac6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  perfectRadius: 5
+  maxRadius: 8
+  errorRadius: 3
+  detected: 0
+  soundOrigin: {x: 0, y: 0, z: 0}
 --- !u!114 &114123584553998324
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -605,8 +647,8 @@ MonoBehaviour:
   angularSteering: 0
   verticalSteering: 0
   graph: {fileID: 0}
-  target: {fileID: 0}
-  start: 1
+  target: {x: 0, y: 0, z: 0}
+  start: 0
 --- !u!114 &114228079180401500
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -629,7 +671,9 @@ MonoBehaviour:
   maxSpeed: 30
   jumping: 0
   gravity: 1
+  ground: 0
   walls: 
+  normal: ninguna
 --- !u!114 &114389863503641772
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -659,7 +703,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c6a28e36ce5da4881dc6be08a7f36a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterKinematic: {fileID: 0}
+  characterKinematic: {fileID: 114228079180401500}
   weight: 1
   linearSteering: {x: 0, y: 0, z: 0}
   angularSteering: 0
@@ -687,6 +731,34 @@ MonoBehaviour:
   collisionDetector: {fileID: 114796822603711248}
   targets: []
   maxForce: {x: 10, y: 0, z: 10}
+--- !u!114 &114675079100592310
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013297890758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0409893ae15877f42a761a4f3ce9cd47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  states: []
+  initialState: {fileID: 0}
+  currentState: {fileID: 0}
+--- !u!114 &114677376667319118
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013297890758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31ae47d30a6fda74599325d2728897b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  states: []
+  initialState: {fileID: 0}
+  currentState: {fileID: 0}
 --- !u!114 &114796822603711248
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -708,6 +780,29 @@ MonoBehaviour:
   mainDistance: 2
   sideDistance: 2
   sideAngle: 30
+--- !u!114 &114800102791787948
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013297890758}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5389adc85c4a4464a99f5314650bc239, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterKinematic: {fileID: 114228079180401500}
+  weight: 1
+  linearSteering: {x: 0, y: 0, z: 0}
+  angularSteering: 0
+  verticalSteering: 0
+  target: {fileID: 0}
+  maxAnglarAcceleration: 360
+  maxRotation: 360
+  targetRadius: 1.5
+  slowRadius: 180
+  timeToTarget: 0.01
+  targetPos: {x: 0, y: 0, z: 0}
 --- !u!114 &114816486275279354
 MonoBehaviour:
   m_ObjectHideFlags: 1

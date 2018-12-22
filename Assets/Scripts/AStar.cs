@@ -8,7 +8,7 @@ public class AStar : SteeringBehavior {
     private PathFollowing pathfollow;
 
     public Graph graph;
-    public Transform target;
+    public Vector3 target;
     public bool start;
 
 	// Use this for initialization
@@ -21,7 +21,7 @@ public class AStar : SteeringBehavior {
 		if (start)
         {
             //Debug.Log(graph.posicionEnNodo(target.position).id);
-            List<int> nodos = graph.aStar(transform.position, target.position);
+            List<int> nodos = graph.aStar(transform.position, target);
 
             foreach (int i in nodos)
             {

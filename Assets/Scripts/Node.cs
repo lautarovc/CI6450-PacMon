@@ -13,6 +13,7 @@ public class Node : ScriptableObject {
     public string normal;
     public int altura;
     public bool dibujar;
+    public float size;
 
     public void loadData(int i, Vector3[] ps, bool ocup, string nor, int alt)
     {
@@ -35,6 +36,7 @@ public class Node : ScriptableObject {
         }
 
         centro = Centro();
+        size = Size();
     }
 
     public Vector3 Centro()
@@ -43,6 +45,23 @@ public class Node : ScriptableObject {
         float z = (puntos[0].z + puntos[1].z + puntos[2].z)/3;
 
         return new Vector3(x, 0, z);
+    }
+
+    public float Size()
+    {
+        float distance = 0;
+
+        foreach (Vector3 punto in puntos)
+        {
+            float pointDistance = Vector3.Distance(centro, punto);
+            
+            if (pointDistance > distance)
+            {
+                distance = pointDistance;
+            }
+        }
+
+        return distance;
     }
 
     public void drawNode()

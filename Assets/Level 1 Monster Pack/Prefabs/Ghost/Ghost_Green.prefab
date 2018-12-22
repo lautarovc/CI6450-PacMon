@@ -91,6 +91,11 @@ GameObject:
   - component: {fileID: 114213033501183450}
   - component: {fileID: 114447094868389226}
   - component: {fileID: 114465587996348296}
+  - component: {fileID: 114924842864238152}
+  - component: {fileID: 114841026394436122}
+  - component: {fileID: 114701852196737808}
+  - component: {fileID: 114467653676376640}
+  - component: {fileID: 114366434297182024}
   m_Layer: 0
   m_Name: Ghost_Green
   m_TagString: Monster
@@ -424,8 +429,8 @@ MonoBehaviour:
   angularSteering: 0
   verticalSteering: 0
   graph: {fileID: 0}
-  target: {fileID: 0}
-  start: 1
+  target: {x: 0, y: 0, z: 0}
+  start: 0
 --- !u!114 &114224044132963338
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -461,6 +466,29 @@ MonoBehaviour:
   linearSteering: {x: 0, y: 0, z: 0}
   angularSteering: 0
   verticalSteering: 0
+--- !u!114 &114366434297182024
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010538092382}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5389adc85c4a4464a99f5314650bc239, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterKinematic: {fileID: 114814469135950588}
+  weight: 1
+  linearSteering: {x: 0, y: 0, z: 0}
+  angularSteering: 0
+  verticalSteering: 0
+  target: {fileID: 0}
+  maxAnglarAcceleration: 360
+  maxRotation: 360
+  targetRadius: 1.5
+  slowRadius: 180
+  timeToTarget: 0.01
+  targetPos: {x: 0, y: 0, z: 0}
 --- !u!114 &114368419954312900
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -540,6 +568,20 @@ MonoBehaviour:
   groups:
   - {fileID: 114447094868389226}
   epsilon: 0.02
+--- !u!114 &114467653676376640
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010538092382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31ae47d30a6fda74599325d2728897b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  states: []
+  initialState: {fileID: 0}
+  currentState: {fileID: 0}
 --- !u!114 &114645673296059302
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -561,6 +603,23 @@ MonoBehaviour:
   - {fileID: 114996464772207756}
   maxAcceleration: 50
   maxRotation: 360
+--- !u!114 &114701852196737808
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010538092382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24f573bf31df4354b98b33fc45382ac6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  perfectRadius: 3
+  maxRadius: 5
+  errorRadius: 3
+  detected: 0
+  soundOrigin: {x: 0, y: 0, z: 0}
 --- !u!114 &114814469135950588
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -583,7 +642,43 @@ MonoBehaviour:
   maxSpeed: 30
   jumping: 0
   gravity: 1
+  ground: 0
   walls: 
+  normal: ninguna
+--- !u!114 &114841026394436122
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010538092382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 036a43cca416ce545812969c0256e353, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  targetRadius: 1.5
+  vertices:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  vertexDistance: 4
+  vertexAngle: 25
+  detected: 0
+--- !u!114 &114924842864238152
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010538092382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0409893ae15877f42a761a4f3ce9cd47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  states: []
+  initialState: {fileID: 0}
+  currentState: {fileID: 0}
 --- !u!114 &114996464772207756
 MonoBehaviour:
   m_ObjectHideFlags: 1

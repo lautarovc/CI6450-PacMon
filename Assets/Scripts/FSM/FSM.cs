@@ -29,9 +29,9 @@ public class FSM : MonoBehaviour {
         }
 
         if (triggeredTransition != null)
-        {
+        {   
             targetState = triggeredTransition.targetState;
-
+            Debug.Log(targetState);
             currentState.makeExitAction();
             triggeredTransition.makeAction();
             targetState.makeEntryAction();

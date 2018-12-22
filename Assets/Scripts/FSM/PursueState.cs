@@ -5,19 +5,21 @@ using UnityEngine;
 public class PursueState : State {
 
     public AStar aStar;
-    public Transform player;
+    public Graph graph;
+    public Vector3 target;
+    public Transform targetTransform = null;
     public Transform character;
 
     public override void makeEntryAction()
     {
-        return;
+        aStar.target = target;
+        aStar.start = true;
     }
 
     public override void makeAction()
-    {
-        aStar.target = player;
-        aStar.start = true;
-        character.localScale = new Vector3(90, 90, 90);
+    {   
+        if (targetTransform != null) aStar.target = targetTransform.position;
+        //character.localScale = new Vector3(90, 90, 90);
     }
 
     public override void makeExitAction()

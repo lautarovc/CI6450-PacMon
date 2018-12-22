@@ -6,44 +6,68 @@ public class MonsterFSM : FSM {
 
     void Awake()
     {
-        StandbyState standby = ScriptableObject.CreateInstance<StandbyState>();
-        standby.aStar = GetComponent<AStar>();
+        PatrolState patrol = ScriptableObject.CreateInstance<PatrolState>();
+        patrol.aStar = GetComponent<AStar>();
+        patrol.graph = GameObject.FindGameObjectWithTag("Graph").GetComponent<Graph>();
+        patrol.strategyPos = new List<int>(new int[] {192, 165, 235, 118 });
 
-        PursueState pursue = ScriptableObject.CreateInstance<PursueState>();
-        pursue.aStar = standby.aStar;
+        RotateState patrolRotation = ScriptableObject.CreateInstance<RotateState>();
+        patrolRotation.graph = patrol.graph;
 
-        InvisiblePursueState invisiblePursue = ScriptableObject.CreateInstance<InvisiblePursueState>();
-        invisiblePursue.aStar = pursue.aStar;
+        PursueState visionPursue = ScriptableObject.CreateInstance<PursueState>();
+        visionPursue.aStar = patrol.aStar;
+        visionPursue.graph = patrol.graph;
 
-        PlayerStartTransition trans1 = ScriptableObject.CreateInstance<PlayerStartTransition>();
-        trans1.targetState = pursue;
+        PursueState hearingPursue = ScriptableObject.CreateInstance<PursueState>();
+        hearingPursue.aStar = visionPursue.aStar;
+        hearingPursue.graph = visionPursue.graph;
 
-        PlayerJumpTransition trans2 = ScriptableObject.CreateInstance<PlayerJumpTransition>();
-        trans2.targetState = invisiblePursue;
+        StartRotationTransition rotationTrans = ScriptableObject.CreateInstance<StartRotationTransition>();
+        rotationTrans.targetState = patrolRotation;
 
-        PlayerNotJumpTransition trans3 = ScriptableObject.CreateInstance<PlayerNotJumpTransition>();
-        trans3.targetState = pursue;
+        PlayerInSightTransition visionTrans = ScriptableObject.CreateInstance<PlayerInSightTransition>();
+        visionTrans.targetState = visionTrans.pursueState = visionPursue;
 
-        GameObject target = GameObject.FindGameObjectsWithTag("Player")[0];
+        PlayerHeardTransition heardTrans = ScriptableObject.CreateInstance<PlayerHeardTransition>();
+        heardTrans.targetState = heardTrans.pursueState = hearingPursue;
 
-        trans1.player = target.transform;
-        trans2.player = target.transform;
-        trans3.player = target.transform;
-        pursue.player = target.transform;
-        pursue.character = transform;
-        invisiblePursue.player = target.transform;
-        invisiblePursue.character = transform;
+        PlayerLostTransition lostTrans = ScriptableObject.CreateInstance<PlayerLostTransition>();
+        lostTrans.targetState = patrol;
 
-        standby.transitions.Add(trans1);
-        pursue.transitions.Add(trans2);
-        invisiblePursue.transitions.Add(trans3);
+        StopHearingTransition stopHearingTrans = ScriptableObject.CreateInstance<StopHearingTransition>();
+        stopHearingTrans.targetState = patrol;
+
+        rotationTrans.character = transform;
+        visionTrans.character = transform;
+        heardTrans.character = transform;
+        lostTrans.character = transform;
+        stopHearingTrans.character = transform;
+
+        patrolRotation.character = transform;
+        visionPursue.character = transform;
+        hearingPursue.character = transform;
+
+        patrol.transitions.Add(rotationTrans);
+        patrol.transitions.Add(visionTrans);
+        patrol.transitions.Add(heardTrans);
+
+        patrolRotation.transitions.Add(visionTrans);
+        patrolRotation.transitions.Add(heardTrans);
+
+        visionPursue.transitions.Add(visionTrans);
+        visionPursue.transitions.Add(lostTrans);
+
+        hearingPursue.transitions.Add(visionTrans);
+        hearingPursue.transitions.Add(heardTrans);
+        hearingPursue.transitions.Add(stopHearingTrans);
 
         states = new List<State>();
-        states.Add(standby);
-        states.Add(pursue);
-        states.Add(invisiblePursue);
+        states.Add(patrol);
+        states.Add(patrolRotation);
+        states.Add(visionPursue);
+        states.Add(hearingPursue);
 
-        initialState = standby;
+        initialState = patrol;
 
     }
 }

@@ -2,7 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerJumpTransition : PlayerStartTransition {
+public class PlayerJumpTransition : Transition {
+
+    public Transform player;
+
+    public override void makeAction()
+    {
+        return;
+    }
 
     public override bool isTriggered()
     {

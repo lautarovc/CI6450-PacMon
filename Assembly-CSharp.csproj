@@ -62,6 +62,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\amusedART\StoneMonster\Script\Animation_Test.cs" />
+    <Compile Include="Assets\DebugDrawingExtension\DebugExtension.cs" />
+    <Compile Include="Assets\DebugDrawingExtension\Example\Example.cs" />
     <Compile Include="Assets\MapGenerator\MapGenEditor.cs" />
     <Compile Include="Assets\MapGenerator\MapGenScript.cs" />
     <Compile Include="Assets\Scripts\Align.cs" />
@@ -74,14 +76,22 @@
     <Compile Include="Assets\Scripts\Face.cs" />
     <Compile Include="Assets\Scripts\FastSeek.cs" />
     <Compile Include="Assets\Scripts\FSM\FSM.cs" />
-    <Compile Include="Assets\Scripts\FSM\InvisiblePursueState.cs" />
+    <Compile Include="Assets\Scripts\FSM\Invisibility FSM\InvisibilityFSM.cs" />
+    <Compile Include="Assets\Scripts\FSM\Invisibility FSM\InvisibleState.cs" />
+    <Compile Include="Assets\Scripts\FSM\Invisibility FSM\PlayerJumpTransition.cs" />
+    <Compile Include="Assets\Scripts\FSM\Invisibility FSM\PlayerNotJumpTransition.cs" />
+    <Compile Include="Assets\Scripts\FSM\Invisibility FSM\VisibleState.cs" />
     <Compile Include="Assets\Scripts\FSM\MonsterFSM.cs" />
-    <Compile Include="Assets\Scripts\FSM\PlayerJumpTransition.cs" />
-    <Compile Include="Assets\Scripts\FSM\PlayerNotJumpTransition.cs" />
-    <Compile Include="Assets\Scripts\FSM\PlayerStartTransition.cs" />
+    <Compile Include="Assets\Scripts\FSM\PatrolState.cs" />
+    <Compile Include="Assets\Scripts\FSM\PlayerHeardTransition.cs" />
+    <Compile Include="Assets\Scripts\FSM\PlayerInSightTransition.cs" />
+    <Compile Include="Assets\Scripts\FSM\PlayerLostTransition.cs" />
     <Compile Include="Assets\Scripts\FSM\PursueState.cs" />
+    <Compile Include="Assets\Scripts\FSM\RotateState.cs" />
     <Compile Include="Assets\Scripts\FSM\StandbyState.cs" />
+    <Compile Include="Assets\Scripts\FSM\StartRotationTransition.cs" />
     <Compile Include="Assets\Scripts\FSM\State.cs" />
+    <Compile Include="Assets\Scripts\FSM\StopHearingTransition.cs" />
     <Compile Include="Assets\Scripts\FSM\Transition.cs" />
     <Compile Include="Assets\Scripts\Graph.cs" />
     <Compile Include="Assets\Scripts\Jumper.cs" />
@@ -94,11 +104,13 @@
     <Compile Include="Assets\Scripts\PrioritySteering.cs" />
     <Compile Include="Assets\Scripts\Pursue.cs" />
     <Compile Include="Assets\Scripts\Seek.cs" />
+    <Compile Include="Assets\Scripts\Senses\Hearing.cs" />
+    <Compile Include="Assets\Scripts\Senses\VisionCone.cs" />
     <Compile Include="Assets\Scripts\Separation.cs" />
     <Compile Include="Assets\Scripts\SteeringBehavior.cs" />
     <Compile Include="Assets\Scripts\ThreeRays.cs" />
-    <Compile Include="Assets\Scripts\Triangulator.cs" />
     <Compile Include="Assets\Scripts\VelocityMatching.cs" />
+    <None Include="Assets\DebugDrawingExtension\readme.txt" />
     <None Include="Assets\MapGenerator\README.txt" />
     <None Include="Assets\Scripts\Packages\Priority Queue Unity Full\bin\Debug\Priority Queue.dll.CodeAnalysisLog.xml" />
     <None Include="Assets\Scripts\Packages\Priority Queue Unity Full\obj\Debug\Priority Queue Unity Full.csproj.FileListAbsolute.txt" />

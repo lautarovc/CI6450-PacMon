@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Face : Align {
 
+    public Vector3 targetPos;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -25,7 +27,7 @@ public class Face : Align {
     public bool getTarget()
     {
         float targetRotation;
-        Vector3 direction = target.position - transform.position;
+        Vector3 direction = targetPos - transform.position;
 
         if (direction.magnitude == 0)
         {

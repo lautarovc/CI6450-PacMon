@@ -8,12 +8,12 @@ public class StandbyState : State {
 
     public override void makeEntryAction()
     {
-        GameObject[] tiles = GameObject.FindGameObjectsWithTag("StartTile");
+        //GameObject[] tiles = GameObject.FindGameObjectsWithTag("StartTile");
 
-        foreach (GameObject tile in tiles)
-        { 
-            tile.GetComponent<MeshRenderer>().material.SetColor("_Color", Color.green);
-        }
+        //foreach (GameObject tile in tiles)
+        //{ 
+        //    tile.GetComponent<MeshRenderer>().material.SetColor("_Color", Color.green);
+        //}
     }
 
     public override void makeAction()
@@ -23,12 +23,12 @@ public class StandbyState : State {
 
     public override void makeExitAction()
     {
-        GameObject[] tiles = GameObject.FindGameObjectsWithTag("StartTile");
+        //GameObject[] tiles = GameObject.FindGameObjectsWithTag("StartTile");
 
-        foreach (GameObject tile in tiles)
-        {
-            tile.GetComponent<MeshRenderer>().material.SetColor("_Color", Color.black);
-        }
+        //foreach (GameObject tile in tiles)
+        //{
+        //    tile.GetComponent<MeshRenderer>().material.SetColor("_Color", Color.black);
+        //}
     }
 
     public override List<Transition> getTransitions()

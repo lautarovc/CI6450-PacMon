@@ -31,7 +31,6 @@ public class ThreeRays : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-
         defineRays();
         rotateRays();
         drawRays();

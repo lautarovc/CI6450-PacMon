@@ -297,11 +297,6 @@ public class Graph : MonoBehaviour {
             }
         }
 
-        if (actual.normal != "ninguna")
-        {
-            return reconstruccionCamino(actual.id, parents);
-        }
-
         if(actual.id != end.id)
         {
             Debug.Log("Error: goal not found.");
